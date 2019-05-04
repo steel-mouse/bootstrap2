@@ -1,4 +1,8 @@
-<%= form_with(model: @blog, local: true) do |form| %>
+<h2>ブログを作成する</h2>
+
+<%=render'form' %>
+
+<!-- <%= form_with(model: @blog, local: true) do |form| %>
   <% if @blog.errors.any? %>
      <div id="error_explanation">
        <h2><%= @blog.errors.count %>件のエラーがあります。</h2>
@@ -16,6 +20,6 @@
     <%= form.text_field :content %>
   </div>
   <%= form.submit %>
-<% end %>
+<% end %> -->
 
 <%= link_to 'ブログ一覧画面にもどる', blogs_path %>

@@ -21,11 +21,11 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(set_blog)
+    set_blog
   end
 
   def update
-    @blog = Blog.find(set_blog)
+    set_blog
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
