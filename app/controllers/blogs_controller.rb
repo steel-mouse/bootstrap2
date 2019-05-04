@@ -14,16 +14,18 @@ class BlogsController < ApplicationController
    else
      render'new'
    end
-
   end
 
+  def edit
+    
+  end
 
 
 
 
   private
 
-def blog_params
-  params.require(:blog).permit(:content)
-end
+  def blog_params
+    params.require(:blog).permit(:content)
+  end
 end
