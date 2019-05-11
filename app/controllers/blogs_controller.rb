@@ -50,6 +50,11 @@ class BlogsController < ApplicationController
   def show
     set_blog
   end
+
+def top
+
+end
+
   private
 
   def blog_params
