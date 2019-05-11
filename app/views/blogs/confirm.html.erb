@@ -2,8 +2,11 @@
 
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
   <%= form.hidden_field :content %>
+  <%= form.hidden_field :title %>
 
+  <p>題名:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
+
   <%= form.submit  "登録する" %>
 <% end %>
 

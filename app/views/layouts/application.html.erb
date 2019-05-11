@@ -10,8 +10,9 @@
     <body>
       <header>
         <ul>
-          <li><a href="#">Bootstrapテキストページ</a></li>
           <li><a href="#">トップページ</a></li>
+         <li><%= link_to '新規ブログを作成へ', new_blog_path %></li>
+         <li><%= link_to 'ブログ一覧へ', blogs_path %></li>
         </ul>
       </header>
       <%= yield %>

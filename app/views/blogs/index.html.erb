@@ -1,48 +1,49 @@
-<div class = "contaier">
-  <div class="row">
-    <header class="header col-md-offset-4 col-md-4 " >
-      <span >Bootstrap</span>
-      <span class = "btn btn-success">challenge!</span>
-    </header>
-  </div>
+<h1>Listing Blogs</h1>
 
-    <!-- <div class = "alert alert-success">alertクラス</div> -->
-    <nav class="menu">
-      <ul class="row">
-          <li class="col-md-4">top</li>
-          <li class="col-md-4">menu1</li>
-          <li class="col-md-4">menu2</li>
-      </ul>
-    </nav>
-    <article>
-        <div class="contents">
-            <ul>
-                <li>contents1</li>
-                <li>contents2</li>
-            </ul>
+<div class="container">
+    <div id="new-blog-link">
+      <%= link_to '新規ブログを作成する', new_blog_path %>
+    </div>
+
+  <div class="row">
+    <% @blogs.each do |blog| %>
+      <div class="col-xs-12 col-md-6 blog-panel">
+        <h2><%= blog.title %></h2>
+        <p><%= blog.content %></p>
+
+        <div class="blog-links">
+          <%= link_to 'Show', blog , class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_blog_path(blog) , class: 'btn btn-info' %> |
+          <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>
-        <div class="topic">
-             <ul>
-                <li>bootstrapを使ってレスポンシブデザインを実現しよう！</li>
-                <li>やればできる！bootstrapを使ってみよう！</li>
-                <li>怖くない！レスポンシブデザインができるようになればWebアプリケーションもワンランク上に！</li>
-            </ul>
-        </div>
-    </article>
+      </div>
+    <% end %>
+  </div>
 </div>
-<!-- <h1>ブログ一覧</h1>
+
+
+
+
+
+
+
+<!--
+<h1>ブログ一覧</h1>
 
 <p><%= notice %></p>
 
 <table>
   <tr>
     <th>内容</th>
+    <th>タイトル</th>
   </tr>
 
   <% @blogs.each do |blog| %>
     <tr>
+      <td><%= blog.title %></td>
       <td><%= blog.content %></td>
       <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
+      <td><%= link_to "ブログを閲覧する", blog_path(blog.id) %></td>
       <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete  ,data: { confirm: '本当に削除していいですか？' } %></td>
     </tr>
   <% end %>
