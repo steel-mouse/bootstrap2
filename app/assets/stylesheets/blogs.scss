@@ -1,11 +1,37 @@
-h1, h2, h3, h4, h5 {
-  border-style: dotted;
-  border-width: 1px;
+// h1, h2, h3, h4, h5 {
+//   border-style: dotted;
+//   border-width: 1px;
+// }
+
+// div, p {
+//   border-style: solid;
+//   border-width: 1px;
+// }
+
+html{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  // border: none;
 }
 
-div, p {
-  border-style: solid;
-  border-width: 1px;
+body{
+  margin: 0;
+  height: 100%;
+  position: relative;
+}
+
+.container{
+  margin: 0;
+  padding: 0;
+  width:100%;
+  height: 100%;
+}
+
+header {
+
+  border-bottom-style: double;
+  border-bottom-color: green;
 }
 
 div.blog-panel {
@@ -15,11 +41,41 @@ div.blog-panel {
 }
 
 body {
-  background-color: #7fffd4; /* ここを変更 */
+  // background-color: #7fffd4; /* ここを変更 */
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-image : url('neko.jp' );
+}
+
+.main-subject{
+
+  // height: 100%;
+  text-align: center;
+}
+
+.main-subject h1{
+  margin-top: 250px;
+}
+
+.main-subject h5{
+  margin-top:40px;
+}
+.row{
+
+}
+
+footer{
+  border-top-style: double;
+  border-top-color: green;
+  // background-color: red;
+  height: 60px;
+  width: 100%;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0;
+  margin-top: 50px;
 }
 
 
