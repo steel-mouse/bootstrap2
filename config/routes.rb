@@ -5,4 +5,5 @@ Rails.application.routes.draw do
       get :top
     end
   end
+  resources :users, only: [:new]
 end
