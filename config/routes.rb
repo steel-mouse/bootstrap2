@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favorites/create'
+
   get 'sessions/new'
 
   resources :blogs do
