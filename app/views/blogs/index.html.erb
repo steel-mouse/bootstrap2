@@ -1,5 +1,5 @@
 <h1>ブログ一覧</h1>
-
+<% current_user %>
 <div class="container">
     <div id="new-blog-link">
       <%= link_to '新規ブログを作成する', new_blog_path %>
@@ -12,11 +12,17 @@
         <p><%= blog.content %></p>
 
         <div class="blog-links">
+
           <%= link_to 'Show', blog , class: 'btn btn-default' %>
+         <% if blog.user_id == current_user.id%>
           <%= link_to 'Edit', edit_blog_path(blog) , class: 'btn btn-info' %> |
           <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+
+        
+            <% end %>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
